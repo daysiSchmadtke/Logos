@@ -1,10 +1,11 @@
 import renderToDOM from '../utils/renderToDom';
+import clearDom from '../utils/clearDom';
 
 const navBar = () => {
-  document.querySelector('#app').innerHTML = '';
+  clearDom();
   const domString = `
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
-    <div class="container-fluid">
+    <nav id="navigation" class="navbar fixed-top navbar-expand-lg navbar-info bg-info mb-5">
+      <div class="container-fluid">
         <a class="navbar-brand title" href="index.html">Logos</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -17,15 +18,15 @@ const navBar = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="ideas">Ideas</a>
+              <a class="nav-link" href="#" id="all-ideas">Ideas</a>
             </li>
-            <li>
-            <input
-              class="form-control mr-sm-2"
-              id="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
+            <li class="nav-item">
+              <input
+                class="form-control mr-sm-2"
+                id="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
             </li>
           </ul>
           <span class="navbar-text">
@@ -33,8 +34,8 @@ const navBar = () => {
             <div id="logout-button"></div>
           </span>
         </div>
-        </div>
-      </nav>`;
+      </div>
+    </nav>`;
 
   renderToDOM('#navigation', domString);
 };

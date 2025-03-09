@@ -35,7 +35,7 @@ const addIdeaForm = (obj = {}, projects = []) => {
         ${projectOptions}
       </select>
     </div>
-    <button type="submit" class="btn btn-primary">Create Idea</button>
+    <button type="submit" class="btn btn-primary mb-5">submit Idea</button>
   </form>
   `;
   renderToDOM('#form-container', domString);
