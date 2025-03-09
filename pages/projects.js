@@ -11,7 +11,7 @@ const emptyProjects = () => {
 const showProjects = (array, uid) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-info btn-lg mb-5" id="add-project-btn">New Project</button>';
+  const btnString = '<button class="btn btn-warning btn-lg mb-5" id="add-project-btn">New Project</button>';
   renderToDOM('#add-button', btnString);
 
   // Filter books to only include those with the specified uid
