@@ -1,26 +1,30 @@
 {
-  "-MiBsfuTafbEQ7eAULxV": {
+  "-MiUniqueKey10": {
+    "idea_id": "-MiUniqueKey10",
     "title": "PraxisHub",
-    "firebaseKey": "-MiBsfuTafbEQ7eAULxV",
-    "description": "A social app for developers, join one of five houses, engage in challenges and collaborate in projects",
+    "firebaseKey": "-MiUniqueKey10",
+    "description": "A social app for developers, join one of five houses, engage in challenges and collaborate in projects.",
     "uid": "lLal7halyLgg2GozPQWkMAanN5D2"
   },
-  "-MiBt86VzkC-EGmJnxjm": {
+  "-MiUniqueKey11": {
+    "idea_id": "-MiUniqueKey11",
     "title": "Uniscript",
-    "firebaseKey": "-MiBt86VzkC-EGmJnxjm",
-    "description": "A fun app for children to learn Javascript",
+    "firebaseKey": "-MiUniqueKey11",
+    "description": "A fun app for children to learn JavaScript.",
     "uid": "lLal7halyLgg2GozPQWkMAanN5D2"
   },
-  "-MiBtwf1BwN9pGavQeR3": {
+  "-MiUniqueKey12": {
+    "idea_id": "-MiUniqueKey12",
     "title": "Bunny",
-    "firebaseKey": "-MiBtwf1BwN9pGavQeR3",
-    "description": "Track Baby Development",
+    "firebaseKey": "-MiUniqueKey12",
+    "description": "Track Baby Development.",
     "uid": "lLal7halyLgg2GozPQWkMAanN5D2"
   },
-  "-MiBuOfHv9NCKB_cneij": {
+  "-MiUniqueKey13": {
+    "idea_id": "-MiUniqueKey13",
     "title": "Hades",
-    "firebaseKey": "-MiBuOfHv9NCKB_cneij",
-    "description": "A futuristic world divided in two, choose your role and escape the underworld",
+    "firebaseKey": "-MiUniqueKey13",
+    "description": "A futuristic world divided in two, choose your role and escape the underworld.",
     "uid": "lLal7halyLgg2GozPQWkMAanN5D2"
   }
 }

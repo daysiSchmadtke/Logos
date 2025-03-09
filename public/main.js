@@ -5,7 +5,9 @@ import '../styles/main.scss';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
-    <hr />`;
+  <h1>Logos</h1>
+  <h2> Your <span class="text-info">Digital Board</span> of Ideas, <span class="text-info">Visualize</span> your path to action.</h2> 
+   <hr />`;
 
   // USE WITH FIREBASE AUTH
   ViewDirectorBasedOnUserAuthStatus();
