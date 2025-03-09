@@ -2,9 +2,24 @@
 @import "~bootstrap/scss/bootstrap";
 
 
+*{
+  cursor: pointer;
+}
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color:#000000;
+  color: rgb(255,255,255);
   text-align: center;
   margin-top: 100px;
+}
+
+h1 {
+  padding: 30px;
+  font-size: 2rem;
+  font-family: monospace;
+  transition: font-size 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+h1:hover {
+  font-size: 2.5rem;
+  color: #00F6ED; 
 }

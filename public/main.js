@@ -5,13 +5,10 @@ import '../styles/main.scss';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
-    <h1>HELLO! You are up and running!</h1>
-    <small>Open your dev tools</small><br />
-    <button class="btn btn-danger" id="click-me">Click ME!</button><br />
+    <h1>Logos</h1>
+    <button class="btn btn-info" id="click-me">Log In</button><br />
     <hr />
-    <h2>These are font awesome icons:</h2>
-    <i class="fas fa-user fa-4x"></i> <i class="fab fa-github-square fa-5x"></i>
-  `;
+    <h2> Your <span class="text-info">Digital Board</span> of Ideas, <span class="text-info">Visualize</span> your path to action.</h2> `;
   console.warn('YOU ARE UP AND RUNNING!');
 
   document
