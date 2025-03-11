@@ -7,16 +7,16 @@ import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import { showProjects } from '../pages/projects';
 
-const startApp = () => {
-  domBuilder();
-  domEvents();
-  formEvents();
+const startApp = (user) => {
+  domBuilder(user);
+  formEvents(user);
   navBar();
+  domEvents(user);
   logoutButton();
   document.addEventListener('DOMContentLoaded', () => {
     navigationEvents();
   });
-  getProjects().then(showProjects);
+  getProjects(user.uid).then(showProjects);
 };
 
 export default startApp;
