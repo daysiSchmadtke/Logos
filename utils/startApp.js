@@ -6,6 +6,8 @@ import navigationEvents from '../events/navEvents';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import { showProjects } from '../pages/projects';
+// import { getIdeas } from '../api/ideaData';
+// import { showIdeas } from '../pages/ideas';
 
 const startApp = (user) => {
   domBuilder(user);

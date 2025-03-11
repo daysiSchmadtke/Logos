@@ -5,18 +5,19 @@ import viewIdea from './viewIdea';
 
 const viewProject = (project) => {
   clearDom();
+
   const domString = `
-  <div class="mt-5 d-flex flex-wrap">
-   <div class="d-flex flex-column">
-     <h1>${project.title || ''}</h1>
-     <p>${project.description || ''}</p>
-     <div class="mt-5">
-       <i id="edit-project-btn--${project.firebaseKey}" class="fas fa-edit btn btn-info"></i>
-       <i id="delete-project--${project.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
-       <i id="view-project-ideas-btn--${project.firebaseKey}" class="fas fa-eye btn btn-primary"> View Ideas</i>
-     </div>
-   </div>
-  </div>`;
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">${project.title || ''}</h1>
+        <p class="card-text">${project.description || ''}</p>
+        <div class="mt-5">
+          <i id="edit-project-btn--${project.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+          <i id="delete-project--${project.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
+          <i id="view-project-ideas-btn--${project.firebaseKey}" class="fas fa-eye btn btn-primary"> View Ideas</i>
+        </div>
+      </div>
+    </div>`;
 
   renderToDOM('#view', domString);
 
