@@ -4,21 +4,14 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // TODO: GET PROJECT
-const getProjects = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/projects.json?orderBy="uid"&equalTo="${uid}"`, {
+const getProjects = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/projects.json`, {
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        resolve(Object.values(data));
-      } else {
-        resolve([]);
-      }
-    })
+  }).then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
 
