@@ -4,6 +4,9 @@ import renderToDOM from '../../utils/renderToDom';
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
 const addIdeaForm = (obj = {}, projects = []) => {
   clearDom();
+
+  // Log the projects to verify data
+
   let projectOptions = '';
 
   projects.forEach((project) => {
@@ -26,7 +29,7 @@ const addIdeaForm = (obj = {}, projects = []) => {
     </div>
     <div class="form-group">
       <label for="date">Date</label>
-      <input type="date" id="date" placeholder="date" value="${obj.date || ''}" required>
+      <input type="date" class="form-control" id="date" placeholder="date" value="${obj.date || ''}" required>
     </div>
     <div class="form-group" id="select-project">
       <label for="project">Project</label>
@@ -35,7 +38,7 @@ const addIdeaForm = (obj = {}, projects = []) => {
         ${projectOptions}
       </select>
     </div>
-    <button type="submit" class="btn btn-primary mb-5">submit Idea</button>
+    <button type="submit" class="btn btn-primary mb-5">Submit Idea</button>
   </form>
   `;
   renderToDOM('#form-container', domString);

@@ -23,3 +23,16 @@ h1:hover {
   font-size: 2.5rem;
   color: #00F6ED; 
 }
+
+#view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+  gap: 20px; /* Adjust gap size as needed */
+  width: 100%;
+}
+
+.card {
+  width: 20rem; /* Set fixed width for each card */
+  margin: 10px; /* Ensure each card has margin for spacing */
+  justify-items: flex-start;
+}

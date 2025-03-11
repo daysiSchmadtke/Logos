@@ -1,5 +1,6 @@
 import renderToDOM from '../utils/renderToDom';
 import clearDom from '../utils/clearDom';
+import logoutButton from './logoutButton'; // Ensure this import
 
 const navBar = () => {
   clearDom();
@@ -12,14 +13,6 @@ const navBar = () => {
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#" id="projects">
-                Projects <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="all-ideas">Ideas</a>
-            </li>
             <li class="nav-item">
               <input
                 class="form-control mr-sm-2"
@@ -28,16 +21,13 @@ const navBar = () => {
                 aria-label="Search"
               />
             </li>
+            <li class="nav-item"><div id="logout-button"></div></li>
           </ul>
-          <span class="navbar-text">
-            <div id="cart-button"></div>
-            <div id="logout-button"></div>
-          </span>
-        </div>
       </div>
     </nav>`;
 
   renderToDOM('#navigation', domString);
+  logoutButton(); // Call the logoutButton function to render the button inside the nav
 };
 
 export default navBar;

@@ -1,9 +1,7 @@
-import firebase from 'firebase/app';
 import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-// TODO: GET PROJECT
 const getProjects = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/projects.json`, {
     method: 'GET',
@@ -15,20 +13,18 @@ const getProjects = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: DELETE PROJECT
-const deleteProject = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/projects/${firebaseKey}.json`, {
-    method: 'DELETE',
+const createProject = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/projects.json`, {
+    method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-    }
-  })
-    .then((res) => res.json())
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  }).then((response) => response.json())
     .then((data) => resolve(data))
     .catch(reject);
 });
 
-// TODO: GET SINGLE PROJECT
 const getSingleProject = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/projects/${firebaseKey}.json`, {
     method: 'GET',
@@ -40,44 +36,44 @@ const getSingleProject = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
-// TODO: CREATE PROJECT
-const createProject = (payload) => new Promise((resolve, reject) => {
-  const user = firebase.auth().currentUser; // Get the currently logged-in user
 
-  if (!user) {
-    reject(new Error('User must be logged in to create a Project.'));
-    return;
-  }
-
-  const updatedPayload = { ...payload, uid: user.uid }; // Attach the current user's uid
-  fetch(`${endpoint}/projects.json`, {
-    method: 'POST',
+const deleteProject = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/projects/${firebaseKey}.json`, {
+    method: 'DELETE',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(updatedPayload),
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch((error) => reject(new Error('Error creating project: ', error.message)));
+  }).then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
 });
 
-// TODO: UPDATE PROJECT
 const updateProject = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/projects/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(payload),
-  })
-    .then((response) => response.json())
-    .then(resolve)
+    body: JSON.stringify(payload)
+  }).then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+const getProjectIdeas = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/projects.json?orderBy="ideas_id"&equalTo="${firebaseKey}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  }).then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
 
 export {
   getProjects,
+  getProjectIdeas,
   createProject,
   deleteProject,
   getSingleProject,
