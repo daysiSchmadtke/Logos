@@ -6,7 +6,7 @@ import { signOut } from '../utils/auth';
 
 // Function to filter ideas based on search value
 const filterIdeas = (searchValue, ideas) => ideas.filter((idea) => idea.title.toLowerCase().includes(searchValue)
-    || idea.description.toLowerCase().includes(searchValue));
+  || idea.description.toLowerCase().includes(searchValue));
 
 // Function to safely add event listeners with debug logging
 const addEventListenerSafe = (selector, event, handler) => {
@@ -20,16 +20,16 @@ const addEventListenerSafe = (selector, event, handler) => {
 
 // Navigation events
 const navigationEvents = () => {
-// LOGOUT BUTTON
+  // LOGOUT BUTTON
   addEventListenerSafe('#logout-button', 'click', signOut);
 
   // ALL IDEAS
-  addEventListenerSafe('#all-ideas', 'click', () => {
+  addEventListenerSafe('#show-ideas', 'click', () => {
     getIdeas().then(showIdeas);
   });
 
   // PROJECTS
-  addEventListenerSafe('#projects', 'click', () => {
+  addEventListenerSafe('#show-projects', 'click', () => {
     getProjects().then(showProjects);
   });
 

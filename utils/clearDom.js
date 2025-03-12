@@ -1,7 +1,8 @@
 const clearDom = () => {
-  document.querySelector('#store').innerHTML = '';
-  document.querySelector('#add-button').innerHTML = '';
+  document.querySelector('#store-projects').innerHTML = '';
+  document.querySelector('#store-ideas').innerHTML = '';
   document.querySelector('#form-container').innerHTML = '';
+  document.querySelector('#login-form-container').innerHTML = '';
   document.querySelector('#view').innerHTML = '';
 };
 
