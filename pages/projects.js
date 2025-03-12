@@ -11,22 +11,25 @@ const emptyProjects = () => {
 const showProjects = (array, uid) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-warning btn-lg mb-5" id="add-project-btn">New Project</button>';
-  renderToDOM('#add-button', btnString);
+  const btnString = '<button class="btn btn-info" id="add-project-btn">New Project</button>';
+  renderToDOM('#add-button-projects', btnString);
 
   // Filter books to only include those with the specified uid
   const userProjects = array.filter((project) => project.uid === uid);
+  const existingContent = document.querySelector('#store-projects').innerHTML;
+  let domString = existingContent;
 
-  let domString = '';
   userProjects.forEach((item) => {
     domString += `
-      <div class="card">
+      <div class="card width:25rem">
           <h5 class="card-title">${item.title}</h5>
             <p class="card-text bold">${item.description}</p>
             <hr>
+            <div class="projects-btns">
             <i class="btn btn-success fas fa-eye" id="view-project-btn--${item.firebaseKey}"></i>
             <i id="edit-project-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
             <i id="delete-project-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
+            </div>
         </div>
       </div>`;
   });
@@ -36,7 +39,7 @@ const showProjects = (array, uid) => {
     domString = '<h1>No Projects</h1>';
   }
 
-  renderToDOM('#store', domString);
+  renderToDOM('#store-projects', domString);
 };
 
 export { showProjects, emptyProjects };

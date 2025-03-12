@@ -1,15 +1,15 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
 
-
-*{
+* {
   cursor: pointer;
+  box-sizing: border-box;
 }
+
 body {
-  background-color:#000000;
-  color: rgb(255,255,255);
+  background-color: #000000;
+  color: rgb(255, 255, 255);
   text-align: center;
-  margin-top: 100px;
 }
 
 h1 {
@@ -21,18 +21,142 @@ h1 {
 
 h1:hover {
   font-size: 2.5rem;
-  color: #00F6ED; 
+  color: #00F6ED;
 }
 
 #view {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px; /* Adjust gap size as needed */
-  width: 100%;
+  justify-content: center;
 }
 
 .card {
-  width: 20rem; /* Set fixed width for each card */
+  width: 25rem; /* Set fixed width for each card */
   margin: 10px; /* Ensure each card has margin for spacing */
-  justify-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Define the transition */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+  background-color: #191919;
+  color:#d2d7df;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color:#46494c;
+  color:#d2d7df;
+}
+
+.navbar-dark .navbar-brand {
+  color: #00F6ED;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.nav-item {
+  margin-right: 15px; /* Add margin to nav items */
+}
+
+.navbar-text {
+  margin-left: auto; /* Push the log button to the far right */
+}
+
+.grey-box {
+  float: left;
+  margin: 2px;
+  width: 200px;
+  height: 200px;
+}
+
+.logout {
+  margin: 0 20px;
+  font-size: 25px;
+  color: white;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 100px;
+  align-content: center;
+}
+
+#add-button {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#form-container {
+  width: 60%;
+  margin: auto;
+  justify-content: center;
+  color: white;
+}
+
+#formModal {
+  color: black;
+}
+
+#store-projects-container, #store-ideas-container {
+  width: 100%; /* Ensure the container is wide enough */
+  text-align: center;
+  margin: 20px auto; /* Add margin for spacing between sections */
+}
+
+#store-projects, #store-ideas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Align items to center */
+  gap: 20px; /* Adjust gap size as needed */
+}
+
+#store-projects .card, #store-ideas .card {
+  width: 25rem;
+  margin: 12px;
+}
+
+#view {
+  width: 100%; /* Ensure the container is wide enough */
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to start */
+}
+
+.details {
+  min-width: 50%;
+  max-width: 60%;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+#store-projects .card{
+  flex-direction: row;
+  height:10rem;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+#store-projects .projects-btns {
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-start; 
+  align-items: flex-end;
+  padding: 10px; 
+}
+
+#store-ideas .card{
+  margin-top: 30px;
 }

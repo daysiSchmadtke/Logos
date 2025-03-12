@@ -1,4 +1,3 @@
-import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
 
 const emptyIdeas = () => {
@@ -7,10 +6,8 @@ const emptyIdeas = () => {
 };
 
 const showIdeas = (array, uid) => {
-  clearDom();
-
-  const btnString = '<button class="btn btn-warning btn-lg mb-5" id="add-idea-btn">New Idea</button>';
-  renderToDOM('#add-button', btnString);
+  const btnString = '<button class="btn btn-light text-success" id="add-idea-btn">New Idea</button>';
+  renderToDOM('#add-button-ideas', btnString);
 
   const userIdeas = array.filter((idea) => idea.uid === uid);
 
@@ -18,7 +15,7 @@ const showIdeas = (array, uid) => {
   userIdeas.forEach((item) => {
     domString += `
       <div class="card">
-        <img class="card-img-top" src=${item.image} alt=${item.title} style="height: 400px;">
+        <img class="card-img-top" src=${item.image} alt=${item.title} style="width:25rem;">
         <div class="card-body" style="height: 180px;">
           <h5 class="card-title">${item.title}</h5>
             <p class="card-text bold">${item.description}</p>
@@ -35,7 +32,7 @@ const showIdeas = (array, uid) => {
     domString = '<h1>No Ideas</h1>';
   }
 
-  renderToDOM('#store', domString);
+  renderToDOM('#store-ideas', domString);
 };
 
 export { showIdeas, emptyIdeas };
